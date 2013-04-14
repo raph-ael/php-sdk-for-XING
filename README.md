@@ -27,7 +27,17 @@ The best way to install php-sdk-for-XING is through composer:
     $ curl -sS https://getcomposer.org/installer | php
     ```
 
-2. Run Composer: `php composer.phar install`
+2. add the following to your composer.json
+
+    ``` javascript
+    {
+        "require": {
+        	"bjoernschotte/php-sdk-for-XING": "dev-master"
+        }
+    }
+    ```
+
+3. Run Composer: `php composer.phar install`
 
 And you should be done.
 
