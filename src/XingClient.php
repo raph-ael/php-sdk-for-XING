@@ -11,7 +11,7 @@
  * @copyright (C) 2013 Björn Schotte <bjoern.schotte@googlemail.com> <bjoern.schotte@mayflower.de>
  */
 
-namespace BjoernSchotte\WebService;
+namespace BjoernSchotte;
 
 use Guzzle\Common\Collection;
 use Guzzle\Plugin\Oauth\OauthPlugin;
