@@ -61,7 +61,7 @@
             "properties": {
                 "response": {
                     "type": "string",
-                    "location": "response_body"
+                    "location": "body"
                 }
             }
         }
