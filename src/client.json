@@ -28,13 +28,11 @@
                 },
                 "hash_function": {
                     "location": "query",
-                    "description": "hash function to use",
-                    "required": "false"
+                    "description": "hash function to use"
                 },
                 "user_fields": {
                     "location": "query",
-                    "description": "fields to return (otherwise ID)",
-                    "required": "false"
+                    "description": "fields to return (otherwise ID)"
                 }
             }
         },
