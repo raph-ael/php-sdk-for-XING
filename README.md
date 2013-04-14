@@ -65,6 +65,8 @@ For a full working example, please refer to .
 
 # License
 
+This work is licensed under Apache 2.0 license. Please see [LICENSE] for further details.
+
 # Contributing
 
 If you want to contribute:
@@ -72,12 +74,13 @@ If you want to contribute:
   * fork this repo
   * create a branch feature/featurename or bug/bugname
   * commit
-  * send a pull request to the master branch of this repo and adhere to the LICENSE
+  * send a pull request to the master branch of this repo and adhere to the [LICENSE]
   * bug me until your PR gets incorporated :-)
 
 # TODOs
 
 The package is currently in heavy development state. At least the following things are open:
 
+  * add more commands from Xing API
   * create example application
-  * write short tutorial
+  * write short tutorial and put it to gh-pages
