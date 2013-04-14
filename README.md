@@ -63,7 +63,7 @@ $client = \BjoernSchotte\XingClient::factory($conf);
 $client->XingRequestToken();
 ```
 
-For a full working example, please refer to .
+For a full working example, please refer to https://github.com/BjoernSchotte/php-sdk-for-XING-example
 
 # License
 
