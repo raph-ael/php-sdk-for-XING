@@ -19,6 +19,18 @@ use with this package.
 
 # Installation
 
+The best way to install php-sdk-for-XING is through composer:
+
+1. Download the [`composer.phar`](https://getcomposer.org/composer.phar) executable or use the installer.
+
+    ``` sh
+    $ curl -sS https://getcomposer.org/installer | php
+    ```
+
+2. Run Composer: `php composer.phar install`
+
+And you should be done.
+
 # Example usage
 
 ```php
@@ -50,7 +62,7 @@ If you want to contribute:
   * fork this repo
   * create a branch feature/featurename or bug/bugname
   * commit
-  * send a pull request to the master of this repository
+  * send a pull request to the master branch of this repo and adhere to the LICENSE
   * bug me until your PR gets incorporated :-)
 
 # TODOs
