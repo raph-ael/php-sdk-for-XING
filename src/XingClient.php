@@ -40,6 +40,13 @@ class XingClient extends Client
         $description = ServiceDescription::factory(__DIR__ . DIRECTORY_SEPARATOR . 'client.json');
         $client->setDescription($description);
 
+        $client->setDefaultHeaders(
+            array(
+                'Accept' => 'application/json',
+                'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            )
+        );
+
         $client->addSubscriber(new OauthPlugin(array(
             'consumer_key'    => $config['consumer_key'],
             'consumer_secret' => $config['consumer_secret'],
