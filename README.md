@@ -1,6 +1,6 @@
 # What is php-sdk-for-XING?
 
-PHP SDK for XING is a client library for connecting to the Xing ReSTful API.
+PHP SDK for XING is a client library for connecting to the Xing ReSTful API, created and maintained by [Björn Schotte](http://twitter.com/BjoernSchotte).
 
 This is **no official package** from XING AG!
 
@@ -16,6 +16,8 @@ PHP SDK for XING requires at least PHP 5.3 and the following packages:
 To use the package, you have to register at https://dev.xing.com/ and register
 yourself for a Xing application to get the consumer key/secret which you have to
 use with this package.
+
+The Xing API currently uses OAuth 1.0 as authentication/authorisation protocol.
 
 # Installation
 
@@ -67,12 +69,16 @@ For a full working example, please refer to .
 
 This work is licensed under [Apache 2.0](LICENSE) license.
 
+# Bug tracker
+
+Have a bug or a feature request? [Please open a new issue](https://github.com/BjoernSchotte/php-sdk-for-XING/issues). Before opening any issue, please search for existing issues and read the [Issue Guidelines](https://github.com/necolas/issue-guidelines), written by [Nicolas Gallagher](https://github.com/necolas/).
+
 # Contributing
 
 If you want to contribute:
 
-  * fork this repo
-  * create a branch `feature/featurename` or `bug/bugname`
+  * fork this repo, clone into & configure your upstreams
+  * create a branch `feature/featurename` or `bug/bugname` (see details at the generic [Contributing Guidelines](https://github.com/necolas/issue-guidelines))
   * code & commit
   * send a pull request to the `master` branch of this repo and adhere to the [license](LICENSE)
   * bug me until your PR gets incorporated :-)
@@ -84,3 +90,4 @@ The package is currently in heavy development state. At least the following thin
   * add more commands from Xing API
   * create example application
   * write short tutorial and put it to gh-pages
+  * refactor OAuth authentication/authorisation process
