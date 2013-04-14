@@ -4,7 +4,7 @@
     "description": "PHP SDK for Xing API",
     "keywords": ["library","foo","composer"],
     "homepage": "https://github.com/BjoernSchotte/php-sdk-for-XING",
-    "license": "MIT",
+    "license": "Apache 2.0",
     "authors": [
         {
             "name": "Björn Schotte",
