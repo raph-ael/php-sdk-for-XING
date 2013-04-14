@@ -81,7 +81,7 @@
             "type": "object",
             "properties": {
                 "results": {
-                    "type": "array",
+                    "type": "object",
                     "location": "json"
                 },
                 "statusCode": {
