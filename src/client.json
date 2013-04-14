@@ -15,6 +15,29 @@
             "summary": "Gets ID card profile of me",
             "responseClass": "users.me.id_card.output"
         },
+        "users.find_by_emails": {
+            "httpMethod": "GET",
+            "uri": "users/find_by_emails",
+            "summary": "finds users by e-mail addresses",
+            "responseClass": "users.find_by_emails.output",
+            "parameters": {
+                "emails": {
+                    "location": "query",
+                    "description": "(hashed) emails",
+                    "required": "true"
+                },
+                "hash_function": {
+                    "location": "query",
+                    "description": "hash function to use",
+                    "required": "false"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "fields to return (otherwise ID)",
+                    "required": "false"
+                }
+            }
+        },
         "status_message": {
             "httpMethod": "POST",
             "uri": "users/{id}/status_message",
@@ -52,6 +75,15 @@
             "properties": {
                 "id": {
                     "type": "string",
+                    "location": "json"
+                }
+            }
+        },
+        "users.find_by_emails.output": {
+            "type": "object",
+            "properties": {
+                "results": {
+                    "type": "array",
                     "location": "json"
                 }
             }
