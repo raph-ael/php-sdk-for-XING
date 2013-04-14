@@ -65,7 +65,7 @@ For a full working example, please refer to .
 
 # License
 
-This work is licensed under Apache 2.0 license. Please see [LICENSE] for further details.
+This work is licensed under [Apache 2.0](LICENSE) license.
 
 # Contributing
 
@@ -74,7 +74,7 @@ If you want to contribute:
   * fork this repo
   * create a branch feature/featurename or bug/bugname
   * commit
-  * send a pull request to the master branch of this repo and adhere to the [LICENSE]
+  * send a pull request to the master branch of this repo and adhere to the [license](LICENSE)
   * bug me until your PR gets incorporated :-)
 
 # TODOs
