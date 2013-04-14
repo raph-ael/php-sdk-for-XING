@@ -4,7 +4,7 @@ PHP SDK for XING is a client library for connecting to the Xing ReSTful API, cre
 
 This is **no official package** from XING AG!
 
-You can find more information at https://dev.xing.com/ about the Xing API.
+You can find more information about the XING API at https://dev.xing.com/
 
 # Requirements
 
@@ -88,6 +88,7 @@ If you want to contribute:
 The package is currently in heavy development state. At least the following things are open:
 
   * add more commands from Xing API
+  * define client.json better (currently Guzzle returns full arrays although client.json isn't fully specified, not sure if this is valid)
   * create example application
   * write short tutorial and put it to gh-pages
   * refactor OAuth authentication/authorisation process
