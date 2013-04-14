@@ -23,10 +23,23 @@ use with this package.
 
 ```php
 <?php
+// OAuth application configuration
+$conf = array(
+    'consumer_key' => '<insert your consumer key>',
+    'consumer_secret' => '<insert your consumer secret>',
+    'token' => false,
+    'token_secret' => false,
+    'callback' => '<insert http(s) callback url>',
+);
+
+/* ... */
+
 // request token and authorize
 $client = \BjoernSchotte\XingClient::factory($conf);
 $client->XingRequestToken();
 ```
+
+For a full working example, please refer to .
 
 # License
 
