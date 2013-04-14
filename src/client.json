@@ -19,6 +19,7 @@
             "httpMethod": "POST",
             "uri": "users/{id}/status_message",
             "summary": "Posts a new status update for the specified user in the activity stream.",
+            "responseClass": "status_message.output",
             "parameters": {
                 "id": {
                     "location": "uri",
@@ -52,6 +53,15 @@
                 "id": {
                     "type": "string",
                     "location": "json"
+                }
+            }
+        },
+        "status_message.output": {
+            "type": "object",
+            "properties": {
+                "response": {
+                    "type": "string",
+                    "location": "response_body"
                 }
             }
         }
