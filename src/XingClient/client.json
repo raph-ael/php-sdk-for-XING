@@ -1,0 +1,59 @@
+{
+    "name": "Xing",
+    "apiVersion": "2013-04-05",
+    "description": "Xing is an API that allows you to interact with Xing professional social network",
+    "operations": {
+        "users.me": {
+            "httpMethod": "GET",
+            "uri": "users/me",
+            "summary": "Gets user profile of me",
+            "responseClass": "users.me.output"
+        },
+        "users.me.id_card": {
+            "httpMethod": "GET",
+            "uri": "users/me/id_card",
+            "summary": "Gets ID card profile of me",
+            "responseClass": "users.me.id_card.output"
+        },
+        "status_message": {
+            "httpMethod": "POST",
+            "uri": "users/{id}/status_message",
+            "summary": "Posts a new status update for the specified user in the activity stream.",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user to post status message to",
+                    "required": "true"
+                },
+                "message": {
+                    "location": "query",
+                    "description": "message to post",
+                    "required": "true"
+                }
+            }
+        }
+    },
+    "models": {
+        "users.me.output": {
+            "type": "object",
+            "properties": {
+                "users": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "users"
+                    }
+                }
+            }
+        },
+        "users.me.id_card.output": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "location": "json"
+                }
+            }
+        }
+    }
+}
