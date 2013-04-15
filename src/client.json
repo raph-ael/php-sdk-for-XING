@@ -3,6 +3,23 @@
     "apiVersion": "2013-04-05",
     "description": "Xing is an API that allows you to interact with Xing professional social network",
     "operations": {
+        "users": {
+            "httpMethod": "GET",
+            "uri": "users/{id}",
+            "summary": "gets data for a specific user",
+            "responseClass": "users.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "id of the user to fetch",
+                    "required": "true"
+                },
+                "fields": {
+                    "location": "query",
+                    "description": "define fields to return, otherwise returns full data"
+                }
+            }
+        },
         "users.me": {
             "httpMethod": "GET",
             "uri": "users/me",
@@ -56,6 +73,18 @@
         }
     },
     "models": {
+        "users.output": {
+            "type": "object",
+            "properties": {
+                "users": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "users"
+                    }
+                }
+            }
+        },
         "users.me.output": {
             "type": "object",
             "properties": {
