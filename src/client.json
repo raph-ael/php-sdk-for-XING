@@ -84,6 +84,28 @@
                 }
             }
         },
+        "users.set_profile_message": {
+            "httpMethod": "PUT",
+            "uri": "users/{id}/profile_message",
+            "summary": "set profile message",
+            "responseClass": "users.set_profile_message.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "message": {
+                    "location": "query",
+                    "description": "message to set",
+                    "required": "true"
+                },
+                "public": {
+                    "location": "query",
+                    "description": "public or not"
+                }
+            }
+        },
         "jobs.recommendations": {
             "httpMethod": "GET",
             "uri": "users/{id}/jobs/recommendations",
@@ -184,6 +206,15 @@
                         "$ref": "profile_message"
                     }
                 },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.set_profile_message.output": {
+            "type": "object",
+            "properties": {
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
