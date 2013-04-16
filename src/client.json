@@ -159,6 +159,24 @@
                     "description": "fields to return"
                 }
             }
+        },
+        "users.get_contact_tags": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/contacts/{contactid}/tags",
+            "summary": "get tags of a contact",
+            "responseClass": "users.get_contact_tags.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "contactid": {
+                    "location": "uri",
+                    "description": "ID of the contact",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -274,6 +292,22 @@
                     "location": "json",
                     "items": {
                         "$ref": "contacts"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_contact_tags.output": {
+            "type": "object",
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "tags"
                     }
                 },
                 "statusCode": {
