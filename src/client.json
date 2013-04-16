@@ -70,6 +70,31 @@
                     "required": "true"
                 }
             }
+        },
+        "jobs.recommendations": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/jobs/recommendations",
+            "summary": "get job recommendations for a user",
+            "responseClass": "jobs.recommendations.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "id of the user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of list"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "fields to return"
+                }
+            }
         }
     },
     "models": {
@@ -129,6 +154,22 @@
                 "response": {
                     "type": "array",
                     "location": "body"
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "jobs.recommendations.output": {
+            "type": "object",
+            "properties": {
+                "job_recommendations": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "job_recommendations"
+                    }
                 },
                 "statusCode": {
                     "type": "string",
