@@ -130,6 +130,35 @@
                     "description": "fields to return"
                 }
             }
+        },
+        "users.get_contacts": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/contacts",
+            "summary": "get a user's contacts",
+            "responseClass": "users.get_contacts.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the query"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the query"
+                },
+                "order_by": {
+                    "location": "query",
+                    "description": "order by of the query"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "fields to return"
+                }
+            }
         }
     },
     "models": {
@@ -229,6 +258,22 @@
                     "location": "json",
                     "items": {
                         "$ref": "job_recommendations"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_contacts.output": {
+            "type": "object",
+            "properties": {
+                "contacts": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "contacts"
                     }
                 },
                 "statusCode": {
