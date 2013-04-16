@@ -177,6 +177,35 @@
                     "required": "true"
                 }
             }
+        },
+        "users.get_contacts_shared": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/contacts/shared",
+            "summary": "get the shared contacts of you and another user",
+            "responseClass": "users.get_contacts_shared.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the other user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of query"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of query"
+                },
+                "order_by": {
+                    "location": "query",
+                    "description": "order by field"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "fields to return"
+                }
+            }
         }
     },
     "models": {
@@ -308,6 +337,22 @@
                     "location": "json",
                     "items": {
                         "$ref": "tags"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_contacts_shared.output": {
+            "type": "object",
+            "properties": {
+                "shared_contacts": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "shared_contacts"
                     }
                 },
                 "statusCode": {
