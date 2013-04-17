@@ -252,6 +252,32 @@
                     "description": "offset of the query"
                 }
             }
+        },
+        "users.get_contact_path": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/network/{otherid}/paths",
+            "summary": "get contact path between two users",
+            "responseClass": "users.get_contact_path.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the first user",
+                    "required": "true"
+                },
+                "otherid": {
+                    "location": "uri",
+                    "summary": "ID of the other user",
+                    "required": "true"
+                },
+                "all_paths": {
+                    "location": "query",
+                    "summary": "get all paths"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "summary": "get user fields"
+                }
+            }
         }
     },
     "models": {
@@ -431,6 +457,22 @@
                     "location": "json",
                     "items": {
                         "$ref": "contact_requests"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_contact_path.output": {
+            "type": "object",
+            "properties": {
+                "contact_paths": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "contact_paths"
                     }
                 },
                 "statusCode": {
