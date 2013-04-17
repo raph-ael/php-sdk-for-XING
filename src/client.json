@@ -312,7 +312,8 @@
             "parameters": {
                 "id": {
                     "location": "uri",
-                    "description": "ID of the user who wants to create a bookmark"
+                    "description": "ID of the user who wants to create a bookmark",
+                    "required": "true"
                 },
                 "bookmarkid": {
                     "location": "uri",
@@ -328,7 +329,8 @@
             "parameters": {
                 "id": {
                     "location": "uri",
-                    "description": "ID of the user who wants to delete a bookmark"
+                    "description": "ID of the user who wants to delete a bookmark",
+                    "required": "true"
                 },
                 "bookmarkid": {
                     "location": "uri",
@@ -344,7 +346,8 @@
             "parameters": {
                 "id": {
                     "location": "uri",
-                    "description": "ID of the user"
+                    "description": "ID of the user",
+                    "required": "true"
                 },
                 "limit": {
                     "location": "query",
