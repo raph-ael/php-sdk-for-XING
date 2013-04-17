@@ -303,6 +303,22 @@
                     "description": "return specific user fields"
                 }
             }
+        },
+        "users.create_bookmark": {
+            "httpMethod": "PUT",
+            "uri": "users/{id}/bookmarks/{bookmarkid}",
+            "summary": "create a user bookmark",
+            "responseClass": "users.create_bookmark.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user who wants to create a bookmark"
+                },
+                "bookmarkid": {
+                    "location": "uri",
+                    "description": "ID of the user who should be bookmarked"
+                }
+            }
         }
     },
     "models": {
@@ -516,6 +532,15 @@
                         "$ref": "bookmarks"
                     }
                 },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.create_bookmark.output": {
+            "type": "object",
+            "properties": {
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
