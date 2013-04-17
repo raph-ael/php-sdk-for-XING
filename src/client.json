@@ -588,6 +588,57 @@
                     "required": "true"
                 }
             }
+        },
+        "users.get_activity_likes": {
+            "httpMethod": "GET",
+            "uri": "activities/{id}/likes",
+            "summary": "get likes on an activity",
+            "responseClass": "users.get_activity_likes.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the list"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "receive specific user fields"
+                }
+            }
+        },
+        "users.create_activity_like": {
+            "httpMethod": "PUT",
+            "uri": "activities/{id}/like",
+            "summary": "create specific like on an activity",
+            "responseClass": "users.create_activity_like.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                }
+            }
+        },
+        "users.remove_activity_like": {
+            "httpMethod": "DELETE",
+            "uri": "activities/{id}/like",
+            "summary": "delete a specific like on an activity",
+            "responseClass": "users.remove_activity_like.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -967,6 +1018,40 @@
             }
         },
         "users.delete_activity_comment.output": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_activity_likes.output": {
+            "type": "object",
+            "properties": {
+                "likes": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "likes"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.create_activity_likes.output": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.remove_activity_likes.output": {
             "type": "object",
             "properties": {
                 "statusCode": {
