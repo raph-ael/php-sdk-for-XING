@@ -395,6 +395,10 @@
                     "items": {
                         "$ref": "contact_requests"
                     }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
                 }
             }
         }
