@@ -455,6 +455,31 @@
                     "description": "user fields to return"
                 }
             }
+        },
+        "users.get_user_feed": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/feed",
+            "summary": "get network feed of a specific user",
+            "responseClass": "users.get_user_feed.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "since": {
+                    "location": "query",
+                    "description": "since specified timestamp"
+                },
+                "until": {
+                    "location": "query",
+                    "description": "older than specified timestamp"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "user fields to return"
+                }
+            }
         }
     },
     "models": {
@@ -743,6 +768,22 @@
             }
         },
         "users.get_network_feed.output": {
+            "type": "object",
+            "properties": {
+                "network_activities": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "network_activities"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_user_feed.output": {
             "type": "object",
             "properties": {
                 "network_activities": {
