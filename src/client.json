@@ -480,6 +480,23 @@
                     "description": "user fields to return"
                 }
             }
+        },
+        "users.get_activity": {
+            "httpMethod": "GET",
+            "uri": "activities/{id}",
+            "summary": "get a single activity",
+            "responseClass": "users.get_activity.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "user fields to return"
+                }
+            }
         }
     },
     "models": {
@@ -791,6 +808,22 @@
                     "location": "json",
                     "items": {
                         "$ref": "network_activities"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_activity.output": {
+            "type": "object",
+            "properties": {
+                "activities": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "activities"
                     }
                 },
                 "statusCode": {
