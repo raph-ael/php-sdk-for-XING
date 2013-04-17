@@ -231,6 +231,27 @@
                     "description": "fields to return"
                 }
             }
+        },
+        "users.get_contact_requests_sent": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/contact_requests/sent",
+            "summary": "get contact requests the user has sent",
+            "responseClass": "users.get_contact_requests_sent.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the query"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the query"
+                }
+            }
         }
     },
     "models": {
@@ -387,6 +408,22 @@
             }
         },
         "users.get_contact_requests.output": {
+            "type": "object",
+            "properties": {
+                "contact_requests": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "contact_requests"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_contact_requests_sent.output": {
             "type": "object",
             "properties": {
                 "contact_requests": {
