@@ -514,6 +514,19 @@
                     "description": "text to share"
                 }
             }
+        },
+        "users.delete_activitiy": {
+            "httpMethod": "DELETE",
+            "uri": "activities/{id}",
+            "summary": "delete your own activity",
+            "responseClass": "users.delete_activity.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity to delete",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -850,6 +863,15 @@
             }
         },
         "users.share_activity.output": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.delete_activity.output": {
             "type": "object",
             "properties": {
                 "statusCode": {
