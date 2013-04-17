@@ -497,6 +497,23 @@
                     "description": "user fields to return"
                 }
             }
+        },
+        "users.share_activity": {
+            "httpMethod": "POST",
+            "uri": "activities/{id}/share",
+            "summary": "share an activity to your network",
+            "responseClass": "users.share_activity.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                },
+                "text": {
+                    "location": "query",
+                    "description": "text to share"
+                }
+            }
         }
     },
     "models": {
@@ -826,6 +843,15 @@
                         "$ref": "activities"
                     }
                 },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.share_activity.output": {
+            "type": "object",
+            "properties": {
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
