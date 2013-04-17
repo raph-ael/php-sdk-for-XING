@@ -570,6 +570,24 @@
                     "required": "true"
                 }
             }
+        },
+        "users.delete_activity_comment": {
+            "httpMethod": "DELETE",
+            "uri": "activities/{id}/comments/{commentid}",
+            "summary": "delete a specific command on an activity",
+            "responseClass": "users.delete_activity_comment.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                },
+                "commentid": {
+                    "location": "uri",
+                    "description": "ID of the comment",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -940,6 +958,15 @@
             }
         },
         "users.post_activity_comment.output": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.delete_activity_comment.output": {
             "type": "object",
             "properties": {
                 "statusCode": {
