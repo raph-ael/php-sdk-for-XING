@@ -426,6 +426,35 @@
                     "required": "true"
                 }
             }
+        },
+        "users.get_network_feed": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/network_feed",
+            "summary": "get the network feed of the user",
+            "responseClass": "users.get_network_feed.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "id of the user",
+                    "required": "true"
+                },
+                "aggregate": {
+                    "location": "query",
+                    "description": "if you want aggregation of activities"
+                },
+                "since": {
+                    "location": "query",
+                    "description": "since specified timestamp"
+                },
+                "until": {
+                    "location": "query",
+                    "description": "older than specified timestamp"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "user fields to return"
+                }
+            }
         }
     },
     "models": {
@@ -707,6 +736,22 @@
         "users.block_recommendation.output": {
             "type": "object",
             "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_network_feed.output": {
+            "type": "object",
+            "properties": {
+                "network_activities": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "network_activities"
+                    }
+                },
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
