@@ -527,6 +527,31 @@
                     "required": "true"
                 }
             }
+        },
+        "users.get_activity_comments": {
+            "httpMethod": "GET",
+            "uri": "activities/{id}/comments",
+            "summary": "get comments for a specific activity",
+            "responseClass": "users.get_activity_comments.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the list"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "receive specific user fields"
+                }
+            }
         }
     },
     "models": {
@@ -879,7 +904,22 @@
                     "location": "statusCode"
                 }
             }
+        },
+        "users.get_activity_comments.output": {
+            "type": "object",
+            "properties": {
+                "comments": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "comments"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
         }
-
     }
 }
