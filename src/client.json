@@ -515,7 +515,7 @@
                 }
             }
         },
-        "users.delete_activitiy": {
+        "users.delete_activity": {
             "httpMethod": "DELETE",
             "uri": "activities/{id}",
             "summary": "delete your own activity",
