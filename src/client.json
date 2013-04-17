@@ -363,6 +363,19 @@
                     "description": "strip HTML for visit reason"
                 }
             }
+        },
+        "users.create_visit": {
+            "httpMethod": "POST",
+            "uri": "users/{id}/visits",
+            "summary": "create a visit to a specific user",
+            "responseClass": "users.create_visit.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user to visit",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -610,6 +623,15 @@
                         "$ref": "visits"
                     }
                 },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.create_visit.output": {
+            "type": "object",
+            "properties": {
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
