@@ -335,8 +335,35 @@
                     "description": "ID of the bookmarked user who should be deleted"
                 }
             }
+        },
+        "users.get_visits": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/visits",
+            "summary": "get list of users that visited this user",
+            "responseClass": "users.get_visits.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the list"
+                },
+                "since": {
+                    "location": "query",
+                    "description": "return only users who visited since"
+                },
+                "strip_html": {
+                    "location": "query",
+                    "description": "strip HTML for visit reason"
+                }
+            }
         }
-
     },
     "models": {
         "users.output": {
@@ -567,6 +594,22 @@
         "users.delete_bookmark.output": {
             "type": "object",
             "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_visits.output": {
+            "type": "object",
+            "properties": {
+                "visits": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "visits"
+                    }
+                },
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
