@@ -408,6 +408,24 @@
                     "description": "receive specific user fields"
                 }
             }
+        },
+        "users.block_recommendation": {
+            "httpMethod": "DELETE",
+            "uri": "users/{id}/network/recommendations/user/{blockid}",
+            "summary": "block recommendation of a user with id blockid",
+            "responseClass": "users.block_recommendation.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user who receives recommendations",
+                    "required": "true"
+                },
+                "blockid": {
+                    "location": "uri",
+                    "description": "ID of the user who should be blocked in recommendations",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -680,6 +698,15 @@
                         "$ref": "user_recommendations"
                     }
                 },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.block_recommendation.output": {
+            "type": "object",
+            "properties": {
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
