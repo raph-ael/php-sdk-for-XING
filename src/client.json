@@ -278,6 +278,31 @@
                     "summary": "get user fields"
                 }
             }
+        },
+        "users.get_bookmarks": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/bookmarks",
+            "summary": "get bookmarked users for a user",
+            "responseClass": "users.get_bookmarks.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of list"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "return specific user fields"
+                }
+            }
         }
     },
     "models": {
@@ -473,6 +498,22 @@
                     "location": "json",
                     "items": {
                         "$ref": "contact_paths"
+                    }
+                },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_bookmarks.output": {
+            "type": "object",
+            "properties": {
+                "bookmarks": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "bookmarks"
                     }
                 },
                 "statusCode": {
