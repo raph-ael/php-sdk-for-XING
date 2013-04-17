@@ -379,6 +379,35 @@
                     "required": "true"
                 }
             }
+        },
+        "users.get_recommendations": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/network/recommendations",
+            "summary": "get recommendations of other users for a user",
+            "responseClass": "users.get_recommendations.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the list"
+                },
+                "similar_user_id": {
+                    "location": "query",
+                    "description": "user id of other users for whom interesting users should be received"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "receive specific user fields"
+                }
+            }
         }
     },
     "models": {
@@ -635,6 +664,22 @@
         "users.create_visit.output": {
             "type": "object",
             "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_recommendations.output": {
+            "type": "object",
+            "properties": {
+                "user_recommendations": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "user_recommendations"
+                    }
+                },
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
