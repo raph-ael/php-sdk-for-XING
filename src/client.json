@@ -319,7 +319,24 @@
                     "description": "ID of the user who should be bookmarked"
                 }
             }
+        },
+        "users.delete_bookmark": {
+            "httpMethod": "DELETE",
+            "uri": "users/{id}/bookmarks/{bookmarkid}",
+            "summary": "delete a user bookmark",
+            "responseClass": "users.delete_bookmark.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user who wants to delete a bookmark"
+                },
+                "bookmarkid": {
+                    "location": "uri",
+                    "description": "ID of the bookmarked user who should be deleted"
+                }
+            }
         }
+
     },
     "models": {
         "users.output": {
@@ -546,6 +563,16 @@
                     "location": "statusCode"
                 }
             }
+        },
+        "users.delete_bookmark.output": {
+            "type": "object",
+            "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
         }
+
     }
 }
