@@ -552,6 +552,24 @@
                     "description": "receive specific user fields"
                 }
             }
+        },
+        "users.post_activity_comment": {
+            "httpMethod": "POST",
+            "uri": "activities/{id}/comments",
+            "summary": "post a comment on an activity",
+            "responseClass": "users.post_activity_comment.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the activity",
+                    "required": "true"
+                },
+                "text": {
+                    "location": "query",
+                    "description": "comment to add to the activity",
+                    "required": "true"
+                }
+            }
         }
     },
     "models": {
@@ -915,6 +933,15 @@
                         "$ref": "comments"
                     }
                 },
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.post_activity_comment.output": {
+            "type": "object",
+            "properties": {
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
