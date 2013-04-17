@@ -1042,7 +1042,7 @@
                 }
             }
         },
-        "users.create_activity_likes.output": {
+        "users.create_activity_like.output": {
             "type": "object",
             "properties": {
                 "statusCode": {
@@ -1051,7 +1051,7 @@
                 }
             }
         },
-        "users.remove_activity_likes.output": {
+        "users.remove_activity_like.output": {
             "type": "object",
             "properties": {
                 "statusCode": {
