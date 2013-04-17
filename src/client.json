@@ -253,10 +253,10 @@
                 }
             }
         },
-        "users.get_contact_path": {
+        "users.get_contact_paths": {
             "httpMethod": "GET",
             "uri": "users/{id}/network/{otherid}/paths",
-            "summary": "get contact path between two users",
+            "summary": "get contact path(s) between two users",
             "responseClass": "users.get_contact_path.output",
             "parameters": {
                 "id": {
@@ -465,7 +465,7 @@
                 }
             }
         },
-        "users.get_contact_path.output": {
+        "users.get_contact_paths.output": {
             "type": "object",
             "properties": {
                 "contact_paths": {
