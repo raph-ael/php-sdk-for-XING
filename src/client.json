@@ -639,6 +639,35 @@
                     "required": "true"
                 }
             }
+        },
+        "users.get_conversations": {
+            "httpMethod": "GET",
+            "uri": "users/{id}/conversations",
+            "summary": "get the conversations with a given user",
+            "responseClass": "users.get_conversations.output",
+            "parameters": {
+                "id": {
+                    "location": "uri",
+                    "description": "ID of the user",
+                    "required": "true"
+                },
+                "limit": {
+                    "location": "query",
+                    "description": "limit of the list"
+                },
+                "offset": {
+                    "location": "query",
+                    "description": "offset of the list"
+                },
+                "user_fields": {
+                    "location": "query",
+                    "description": "receive specific user fields"
+                },
+                "with_latest_messages": {
+                    "location": "query",
+                    "description": "with the latest messages included"
+                }
+            }
         }
     },
     "models": {
@@ -1054,6 +1083,22 @@
         "users.remove_activity_like.output": {
             "type": "object",
             "properties": {
+                "statusCode": {
+                    "type": "string",
+                    "location": "statusCode"
+                }
+            }
+        },
+        "users.get_conversations.output": {
+            "type": "object",
+            "properties": {
+                "conversations": {
+                    "type": "array",
+                    "location": "json",
+                    "items": {
+                        "$ref": "conversations"
+                    }
+                },
                 "statusCode": {
                     "type": "string",
                     "location": "statusCode"
