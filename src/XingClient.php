@@ -59,7 +59,6 @@ class XingClient extends Client
      */
     public function XingRequestToken()
     {
-        error_log("Callback: " . $this->getConfig()->get('callback'));
         $request = $this->post('request_token?oauth_callback=' . urlencode($this->getConfig()->get('callback')));
 
         $response = $request->send();
