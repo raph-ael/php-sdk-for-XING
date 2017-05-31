@@ -1,5 +1,5 @@
 {
-    "name": "raph-ael/php-sdk-for-XING",
+    "name": "raphael/phpxing",
     "type": "library",
     "description": "PHP SDK for Xing API",
     "keywords": ["library","foo","composer"],
